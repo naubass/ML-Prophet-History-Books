@@ -17,8 +17,8 @@ borrow_counts.rename(columns={'borrow_date': 'ds'}, inplace=True)
 
 # load holidays
 holidays = pd.read_csv('library_holidays_exams.csv')
-holidays['ds'] = pd.to_datetime(holidays['date'])
-holidays = holidays.rename(columns={'event': 'holiday'})
+holidays['date'] = pd.to_datetime(holidays['date'])
+holidays = holidays.rename(columns={'date': 'ds', 'event': 'holiday'})
 holidays['lower_window'] = -1
 holidays['upper_window'] = 1
 
