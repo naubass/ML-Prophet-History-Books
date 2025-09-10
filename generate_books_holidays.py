@@ -61,6 +61,12 @@ for _ in range(NUM_BOOKS):
     })
     book_id_counter += 1
 
+books_df = pd.DataFrame(books)
+books_df.to_csv("book_metadata.csv", index=False)
+
+print("Metadata buku berhasil disimpan ke book_metadata.csv")
+print(books_df.head())
+
 # generate borrower data
 start_date = datetime.now().date() - timedelta(days=365*2)
 user_depts = ["HR", "Finance", "IT", "Marketing", "Sales", "Operations", "R&D", "Customer Service"]
